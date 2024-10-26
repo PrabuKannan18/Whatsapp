@@ -34,6 +34,11 @@ export class ChatsPage implements AfterViewInit{
     { name: 'Anbu', date: '9:50 AM', img: 'https://i.pravatar.cc/150?img=33', status: 'Thanks la', no: '1' },
     { name: 'Manoj', date: '1:00 PM', img: 'https://i.pravatar.cc/150?img=67',status:'video' },
     { name: 'Dani', date: '10/08/24', img: 'https://i.pravatar.cc/150?img=53', status: 'Photo' },
+    { name: 'karthi', date: '10/02/24', img: 'https://i.pravatar.cc/150?img=57',status: 'Ok da', no: '3'  },
+    { name: 'Siva', date: '7:37 AM', img: 'https://i.pravatar.cc/150?img=11', status: ' prabu', no: '1' },
+    { name: 'Nikil', date: '10/04/24', img: 'https://i.pravatar.cc/150?img=41', status: 'Photo' },
+    { name: 'Ramji', date: '10/05/24', img: 'https://i.pravatar.cc/150?img=61',status: 'Rytuu ok', no: '2' },
+    { name: 'Udhaya', date: '9:50 AM', img: 'https://i.pravatar.cc/150?img=33', status: 'Seri lae', no: '1' },
 ];
 ngAfterViewInit() {
   lottie.loadAnimation({
