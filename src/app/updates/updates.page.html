@@ -1,0 +1,102 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <strong>Updates</strong>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="scan"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-label >
+    <h1>Status</h1>
+  </ion-label>
+  <ion-list>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-avatar class="avatar-status" slot="start">
+        <img
+          src="https://images.pexels.com/photos/1776199/pexels-photo-1776199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          alt="My Avatar" />
+      </ion-avatar>
+      <ion-label>
+        <h2>My status</h2>
+        <p>yesterday</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-text color="medium">Recent updates</ion-text>
+  <ion-list>
+    <ion-item lines="none" class="ion-no-padding" *ngFor="let status of statuses">
+      <ion-avatar class="avatar-border" slot="start">
+        <img [src]="status.img">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{status.name}}</h2>
+        <p>{{status.date}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+<ion-accordion-group class="ion-margin-bottom">
+  <ion-accordion value="first">
+    <ion-item class="ion-no-padding" slot="header" lines="none">
+      <ion-label color="medium" >Viewed updates</ion-label>
+    </ion-item>
+    <div slot="content" >
+      <ion-item class="ion-no-padding" lines="none" *ngFor="let view of viewed">
+      <ion-avatar class="viewed" slot="start">
+        <img [src]="view.img">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{view.name}}</h2>
+        <p>{{view.date}}</p>
+      </ion-label>
+    </ion-item>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button class="ion-margin-bottom" size="small" color="light">
+      <ion-icon name="pencil-sharp"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="primary">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-label >Find channels</ion-label>
+  <swiper-container [modules]="swiperModules" [slidesPerView]="2.3" [keyboard]="true">
+    <swiper-slide *ngFor="let channel of channels">
+      <ion-card class="ion-text-center ">
+        <ion-avatar class="avatar-img">
+          <img [src]="channel.img" alt="{{channel.name}}" width="60">
+        </ion-avatar>
+        <ion-card-header class="ion-no-margin ion-no-padding">
+          <ion-card-title>
+            <h6>{{channel.name}}</h6>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip color="primary">Follow</ion-chip>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+  <ion-button class="ion-margin-top" shape="round">
+    Explore more
+  </ion-button>
+</ion-content>

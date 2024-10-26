@@ -1,0 +1,36 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <strong>Communities</strong>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="scan"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item class="group-item" lines="none">
+      <p class="groups">
+        <span class="material-symbols-outlined">
+          groups
+        </span>
+      </p>
+      
+      <ion-label class="ion-padding-start">New community</ion-label>
+      
+      <ion-button class="add-community-button" size="small" shape="round">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

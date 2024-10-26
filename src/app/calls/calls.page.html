@@ -1,0 +1,63 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <strong>Calls</strong>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="scan"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-label class="ion-padding">Favorites</ion-label>
+  <ion-list>
+    <ion-item  lines="none">
+      <ion-button slot="start" shape="round">
+        <ion-icon size="medium" slot="icon-only" name="heart"></ion-icon>
+      </ion-button>
+      <ion-label class="ion-margin-top">
+        <h2>Add favorite</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-text class="ion-margin-start" color="medium" >Recent</ion-text>
+
+  <ion-list>
+    <ion-item   lines="none" *ngFor="let contact of contacts">
+      <ion-avatar slot="start">
+        <img [src]="contact.img" alt="raja">
+      </ion-avatar>
+      <ion-label>
+        <h2 [ngClass]="{'danger': contact.name === 'Sundar' || contact.name === 'Mari'}">{{contact.name}}</h2>
+        <p><span class="material-symbols-outlined arrow "  [ngClass]="{'danger': contact.name === 'Sundar' || contact.name === 'Mari'}"
+          *ngIf="contact.name !== 'Sundar' && contact.name !== 'Mari'"> 
+          call_made
+          </span> <span class="material-symbols-outlined arrow"   [ngClass]="{'danger': contact.name === 'Sundar' || contact.name === 'Mari'}" *ngIf="contact.name === 'Sundar' || contact.name === 'Mari'">
+            call_received
+            </span>{{contact.date}}</p>
+      </ion-label>
+        <ion-icon  name="call-outline" ></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button>
+     <p><span class="material-symbols-outlined">
+      add_call
+      </span></p>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

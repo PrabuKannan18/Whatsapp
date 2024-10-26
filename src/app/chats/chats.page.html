@@ -1,0 +1,68 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar>
+    <ion-title color="primary"><strong>WhatsApp</strong></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="scan"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ 
+</ion-header>
+
+
+<ion-content>
+  <ion-item lines="none">
+    <div class="meta" #animationContainer style="width:30px; height: 30px;"></div>
+    <ion-searchbar mode="ios" searchIcon="undefined" placeholder="Ask Meta AI or Search" color="light"></ion-searchbar>
+  </ion-item>
+ 
+  <ion-label class="ion-margin-start">
+    <ion-chip color="primary">All</ion-chip>
+    <ion-chip color="medium">Unread</ion-chip>
+    <ion-chip color="medium">Favorites</ion-chip>
+    <ion-chip color="medium">Groups</ion-chip>
+  </ion-label>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" class="ion-margin-bottom" size="small">
+      <img src="/assets/icon/metaai.png" width="30px" style="border-radius: 50%;">
+    </ion-fab-button>
+    <ion-fab-button color="primary" >
+      <ion-icon name="chatbox"> </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-item lines="none" *ngFor="let contact of contacts">
+      <ion-avatar slot="start">
+        <img alt="Avatar" [src]="contact.img" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ contact.name }}</h2>
+        <p>
+          <span *ngIf="contact.status === 'video'">
+            <ion-icon color="secondary" name="checkmark-done-outline"></ion-icon>
+            <ion-icon name="videocam"></ion-icon>
+          </span>
+          <span *ngIf="contact.status==='Photo'">
+            <ion-icon name="image"></ion-icon>
+          </span>
+          {{ contact.status }}
+        </p>
+      </ion-label>
+      <ion-label slot="end" class="ion-text-right">
+        <ion-text [color]="contact.no ? 'primary' : 'medium'">
+          <h5>{{ contact.date }}</h5>
+        </ion-text>
+        <ion-badge style="border-radius: 60%;padding: 10%;" *ngIf="contact.no" color="primary">
+          {{ contact.no }}
+        </ion-badge>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
