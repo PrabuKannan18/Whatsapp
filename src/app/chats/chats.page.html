@@ -1,28 +1,41 @@
-<ion-header class="ion-no-border" >
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-title color="primary"><strong>WhatsApp</strong></ion-title>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon name="scan"></ion-icon>
+          <ion-icon name="qr-code-outline"></ion-icon>
       </ion-button>
       <ion-button>
         <ion-icon name="camera-outline"></ion-icon>
       </ion-button>
-      <ion-button>
+      <ion-button id="context-menu-trigger">
         <ion-icon name="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
- 
 </ion-header>
 
 
 <ion-content>
+  <ion-popover trigger="context-menu-trigger">
+    <ng-template>
+      <ion-content>
+        <ion-list>
+          <ion-item button lines="none">New group</ion-item>
+          <ion-item button lines="none">New broadcast</ion-item>
+          <ion-item button lines="none">Linked devices</ion-item>
+          <ion-item button lines="none">Starred messages</ion-item>
+          <ion-item button lines="none">Payments</ion-item>
+          <ion-item button routerLink="/settings" lines="none">Settings</ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
   <ion-item lines="none">
     <div class="meta" #animationContainer style="width:30px; height: 30px;"></div>
     <ion-searchbar mode="ios" searchIcon="undefined" placeholder="Ask Meta AI or Search" color="light"></ion-searchbar>
   </ion-item>
- 
+
   <ion-label class="ion-margin-start">
     <ion-chip color="primary">All</ion-chip>
     <ion-chip color="medium">Unread</ion-chip>
@@ -33,12 +46,12 @@
     <ion-fab-button color="light" class="ion-margin-bottom" size="small">
       <img src="/assets/icon/metaai.png" width="30px" style="border-radius: 50%;">
     </ion-fab-button>
-    <ion-fab-button color="primary" >
+    <ion-fab-button color="primary">
       <ion-icon name="chatbox"> </ion-icon>
     </ion-fab-button>
   </ion-fab>
   <ion-list>
-    <ion-item lines="none" *ngFor="let contact of contacts">
+    <ion-item button lines="none" *ngFor="let contact of contacts" >
       <ion-avatar slot="start">
         <img alt="Avatar" [src]="contact.img" />
       </ion-avatar>
@@ -64,5 +77,10 @@
         </ion-badge>
       </ion-label>
     </ion-item>
+
+    <ion-label class="ion-text-center">
+      <p> <ion-icon name="lock-closed-outline"></ion-icon>Your personal messages are <ion-text color="primary">end-to-end encrypted</ion-text> </p>
+    </ion-label>
+
   </ion-list>
 </ion-content>

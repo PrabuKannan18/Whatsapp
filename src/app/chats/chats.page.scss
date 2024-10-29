@@ -1,16 +1,15 @@
 ion-fab-button {
-    --border-radius: 15px;
-  }
-
-ion-searchbar{
-  position: relative;
-  z-index: -1;
-  
+  --border-radius: 15px;
 }
 
-.meta{
+ion-searchbar {
+  position: relative;
+  z-index: -1;
+
+}
+
+.meta {
   position: absolute;
   margin-left: 10px;
 
 }
-  

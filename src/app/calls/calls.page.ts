@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton, IonList, IonItem, IonLabel, IonText, IonAvatar, IonFab, IonFabButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { camera, ellipseOutline, scan, search, cameraOutline, ellipsisVertical, heart, call, callOutline } from 'ionicons/icons';
+import { camera, ellipseOutline, scan, search, cameraOutline, ellipsisVertical, heart, call, callOutline, lockClosedOutline, qrCodeOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-calls',
@@ -14,7 +14,7 @@ import { camera, ellipseOutline, scan, search, cameraOutline, ellipsisVertical, 
 })
 export class CallsPage implements OnInit {
 
-  constructor() { addIcons({ scan, cameraOutline, search, ellipsisVertical, heart, callOutline, call }); }
+  constructor() { addIcons({qrCodeOutline,cameraOutline,search,ellipsisVertical,heart,callOutline,lockClosedOutline,scan,call}); }
 
   ngOnInit() {
   }

@@ -1,8 +1,11 @@
-.arrow{
+.arrow {
     font-size: 13px;
 }
 
 .danger {
-    color: red; 
-  }
-  
+    color: red;
+}
+
+ion-fab-button {
+    --border-radius: 15px;
+}

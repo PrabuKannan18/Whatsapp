@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonHeader,IonicSlides, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, IonIcon, IonLabel, IonList, IonItem, IonText, IonAvatar, IonFab, IonFabButton } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { addIcons } from 'ionicons';
-import { camera, ellipseOutline, scan, ellipsisVertical, search, cameraOutline, addCircle, pencilSharp } from 'ionicons/icons';
+import { camera, ellipseOutline, scan, ellipsisVertical, search, cameraOutline, addCircle, pencilSharp, qrCodeOutline } from 'ionicons/icons';
 import { CommonModule } from '@angular/common';
 import { register } from 'swiper/element/bundle';
 register();
@@ -18,7 +18,7 @@ schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UpdatesPage {
 
-  constructor() {addIcons({scan,cameraOutline,search,ellipsisVertical,pencilSharp,camera,addCircle,ellipseOutline});}
+  constructor() {addIcons({qrCodeOutline,cameraOutline,search,ellipsisVertical,pencilSharp,camera,scan,addCircle,ellipseOutline});}
  
   statuses = [
     {
