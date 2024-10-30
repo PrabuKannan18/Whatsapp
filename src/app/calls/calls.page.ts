@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton, IonList, IonItem, IonLabel, IonText, IonAvatar, IonFab, IonFabButton } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton, IonList, IonItem, IonLabel, IonText, IonAvatar, IonFab, IonFabButton, IonPopover } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { camera, ellipseOutline, scan, search, cameraOutline, ellipsisVertical, heart, call, callOutline, lockClosedOutline, qrCodeOutline } from 'ionicons/icons';
 
@@ -10,7 +10,7 @@ import { camera, ellipseOutline, scan, search, cameraOutline, ellipsisVertical, 
   templateUrl: './calls.page.html',
   styleUrls: ['./calls.page.scss'],
   standalone: true,
-  imports: [IonFabButton, IonFab, CommonModule, IonAvatar, IonText, IonLabel, IonItem, IonList, IonButton, IonIcon, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonPopover, IonFabButton, IonFab, CommonModule, IonAvatar, IonText, IonLabel, IonItem, IonList, IonButton, IonIcon, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class CallsPage implements OnInit {
 

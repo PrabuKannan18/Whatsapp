@@ -2,10 +2,10 @@
   <ion-toolbar>
     <ion-title color="primary"><strong>WhatsApp</strong></ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button  >
           <ion-icon name="qr-code-outline"></ion-icon>
       </ion-button>
-      <ion-button>
+      <ion-button (click)="takePicture()"  >
         <ion-icon name="camera-outline"></ion-icon>
       </ion-button>
       <ion-button id="context-menu-trigger">
@@ -17,7 +17,7 @@
 
 
 <ion-content>
-  <ion-popover trigger="context-menu-trigger">
+  <ion-popover trigger="context-menu-trigger" [dismissOnSelect]="true">
     <ng-template>
       <ion-content>
         <ion-list>
@@ -51,7 +51,7 @@
     </ion-fab-button>
   </ion-fab>
   <ion-list>
-    <ion-item button lines="none" *ngFor="let contact of contacts" >
+    <ion-item button lines="none" *ngFor="let contact of contacts"(click)="gotoChat(contact)" >
       <ion-avatar slot="start">
         <img alt="Avatar" [src]="contact.img" />
       </ion-avatar>

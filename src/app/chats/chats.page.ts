@@ -6,7 +6,8 @@ import { camera, checkmark, scan, settings, checkmarkDoneOutline, image, ellipsi
 import { CommonModule } from '@angular/common';
 import lottie from 'lottie-web';
 import { Router, RouterLink } from '@angular/router';
-import { SettingsPage } from '../settings/settings.page';
+
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Component({
   selector: 'app-chats',
@@ -55,6 +56,32 @@ export class ChatsPage implements AfterViewInit {
       autoplay: true
     });
   }
+  gotoChat(contact: any) {  
+    this.router.navigate(['/chat', contact.name, contact.img]);  
+   } 
 
+   takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      resultType: CameraResultType.DataUrl,
+      source:CameraSource.Prompt,
+      // saveToGallery:true,
+      
+    });
+    console.log(image)
+  }
  
+//  async startScan(){
+//     try{
+//       const barcode = await CapacitorBarcodeScanner.scanBarcode({
+//         hint: 17,
+//         cameraDirection: 1
+//       })
+//       console.log(barcode);
+//       return ( barcode).ScanResult;
+//     }catch(error){
+//       throw(error)
+//     }
+//   }
 }
+
