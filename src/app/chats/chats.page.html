@@ -68,13 +68,15 @@
           {{ contact.status }}
         </p>
       </ion-label>
-      <ion-label slot="end" class="ion-text-right">
+      <ion-label slot="end" class="ion-text-center">
         <ion-text [color]="contact.no ? 'primary' : 'medium'">
           <h5>{{ contact.date }}</h5>
         </ion-text>
-        <ion-badge style="border-radius: 60%;padding: 10%;" *ngIf="contact.no" color="primary">
-          {{ contact.no }}
-        </ion-badge>
+        <div>
+          <ion-badge *ngIf="contact.no" color="primary">
+            {{ contact.no }}
+          </ion-badge>
+        </div>
       </ion-label>
     </ion-item>
 
